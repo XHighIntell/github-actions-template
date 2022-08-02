@@ -3,4 +3,5 @@
 echo %cd%
 where node
 
-echo done
+node "build/release.js"
+
