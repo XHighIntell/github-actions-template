@@ -20,15 +20,13 @@ jobs:
         steps:
         - uses: actions/checkout@v3
         - run: echo ${{ github.event.inputs.version }}
-        - run: echo $GITHUB_WORKSPACE
         - run: echo ${{ github }}
-        - run: echo "$GITHUB.REPOSITORY"
-        - run: echo "$GITHUB.REPOSITORY_OWNER"
         - name: Dump GitHub context
           env:
                 GITHUB_CONTEXT: ${{ toJson(github) }}
           run: 
                 echo "$GITHUB_CONTEXT"
+
 
         - run: dir
         - name: Use Node.js ${{ matrix.node-version }}
@@ -41,7 +39,7 @@ jobs:
           shell: cmd
           run: |
             "build/build development.cmd"
-        
+            
         
         # - run: npm install -g @babel/core
         # - run: echo done
