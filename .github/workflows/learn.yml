@@ -35,7 +35,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: "build\build development.cmd"
+    - run: "build/build development.cmd"
         
     # - run: npm install -g @babel/core
     # - run: echo done
