@@ -25,7 +25,11 @@ jobs:
     - run: echo ${{ github }}
     - run: echo "$GITHUB.REPOSITORY"
     - run: echo "$GITHUB.REPOSITORY_OWNER"
-    - run: echo ${{ toJson(github) }}
+    - name: Dump GitHub context
+      env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: 
+        echo "$GITHUB_CONTEXT"
     
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
