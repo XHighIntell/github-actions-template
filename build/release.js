@@ -12,7 +12,7 @@ const Path = require('path');
 const OS = require("os");
 const intell = require('intell-node');
 const colors = intell.colors;
-const axios = require('axios');
+
 
 
 var child_process = require('child_process');
