@@ -53,7 +53,7 @@ jobs:
           shell: cmd
           env: 
             API_KEY: ${{ secrets.GITHUB_TOKEN }}
-            VERSION: ${{ github.event.inputs.version }}
+            VERSION2: ${{ github.event.inputs.version }}
           run: |
             cd build
             set
