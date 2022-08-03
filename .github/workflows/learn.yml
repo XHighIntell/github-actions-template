@@ -13,7 +13,7 @@ on:
     
 jobs:
     build:
-        name: build v${{ github.event.inputs.version }}
+        name: build ${{ github.event.inputs.version }}
         runs-on: windows-latest
         
         #strategy:
@@ -56,9 +56,8 @@ jobs:
             VERSION2: ${{ github.event.inputs.version }}
           run: |
             cd build
-            set
             "build development.cmd"
-            
+            dir
         
         # - run: npm install -g @babel/core
         # - run: echo done
