@@ -69,6 +69,6 @@ jobs:
     release:
         name: release v${{ github.event.inputs.version }}
         runs-on: windows-latest
-
+        needs: build
         steps:
             - run: dir
