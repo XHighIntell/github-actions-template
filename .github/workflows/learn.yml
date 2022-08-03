@@ -58,7 +58,12 @@ jobs:
             cd build
             "build development.cmd"
             dir
-        
+
+        - name: Last 
+          run: |
+            dir
+            cd build
+            dir
         # - run: npm install -g @babel/core
         # - run: echo done
     
