@@ -11,16 +11,17 @@ on:
     
 jobs:
     build:
+        name: build v${{ github.event.inputs.version }}
         runs-on: windows-latest
         
-        strategy:
-            matrix:
-                node-version: [16.x]
+        #strategy:
+        #    matrix:
+        #        node-version: [16.x]
 
         steps:
         - uses: actions/checkout@v3
+        - run: $github.event.inputs.version
         - run: echo ${{ github.event.inputs.version }}
-        - run: echo ${{ github }}
         - name: Dump GitHub context
           env:
                 GITHUB_CONTEXT: ${{ toJson(github) }}
@@ -32,9 +33,14 @@ jobs:
         - name: Use Node.js ${{ matrix.node-version }}
           uses: actions/setup-node@v3
           with:
-                node-version: ${{ matrix.node-version }}
-                cache: 'npm'
-                cache-dependency-path: "**/package-lock.json"
+                node-version: 16.x
+
+        - name: Cache dependencies
+          uses: actions/cache@v3
+          with:
+            path: ~/.npm
+            key: npm-${{ hashFiles('package-lock.json') }}
+            restore-keys: npm-
 
         - name: Install dependencies
           shell: cmd
