@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:,">
+    <title>Automatic Testing - jintell v2</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="static/lib/jitest.js"></script>
+    <link href="static/css/global.css" rel="stylesheet" />
+    <link href="static/lib/jitest.css" rel="stylesheet" />
+
+
+    <script src="/src/intell/intell.js"></script>
+    
+    <style>
+        body{margin:0;font-family:arial,sans-serif;background:#f8f9fa;font-size:24px}
+        body>.title{padding:20px 0;text-align:center;font-size:2em}
+        body .Container{padding:0 20px}
+        body .Container>.Content{max-width:1280px;margin:0 auto}
+
+        #test-tree>.jit-testcase{margin:5px 0;padding:10px 10px;border:1px solid rgba(0,0,0,0.2);background:#fff}
+    </style>
+
+</head>
+<body>
+    <div class="title">Automated Testing</div>
+
+    <div class="Container">
+        <div class="Content">
+            
+            <div class="global-actions">
+                <button class="action-run-all" type="button">Run All</button>
+            </div>
+
+            <div id="test-tree">
+                <div id="test1" class="jit-testcase" style="display:none">
+                    <div class="panel1">
+                        <div class="status passed"></div>
+                        <div class="icon class"></div>
+                        <div class="title">EventRegister</div>
+                        <div class="actions">
+                            <div class="action action-run">Run</div>
+                            <div class="action action-run-descendants">Run Descendants</div>
+                        </div>
+                    </div>
+
+                    <div class="children">
+                        <div class="jit-testcase">
+                            <div class="panel1">
+                                <div class="status failed"></div>
+                                <div class="icon method"></div>
+                                <div class="title">addListener</div>
+                            </div>
+                        </div>
+                        <div class="jit-testcase">
+                            <div class="panel1">
+                                <div class="status running"></div>
+                                <div class="icon method"></div>
+                                <div class="title">dispatch</div>
+                            </div>
+                        </div>
+                        <div class="jit-testcase">
+                            <div class="panel1">
+                                <div class="status passed"></div>
+                                <div class="icon method"></div>
+                                <div class="title">removeListener</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="automated-testing.js"></script>
+</body>
+</html>

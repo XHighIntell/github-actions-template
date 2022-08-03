@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../src/intell/intell.js"></script>
+    <script src="../src/intell/intell.ctrl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+        body { background: repeating-linear-gradient(90deg, transparent 0, transparent 99px, black 100px),repeating-linear-gradient(0deg, transparent 0, transparent 99px, black 100px); background-size: 100px 100px }
+
+        .aaa { position: absolute; left: 100px; top: 100px; width: 200px; height: 100px; overflow: auto }
+        .target{background:Red}
+    </style>
+</head>
+<body>
+    <div class="aaa">
+        <div>asdasd asd</div>
+        <div>asdasd asd</div>
+        <div>asdasd asd</div>
+        <div class="target">here is target</div>
+        <div>asdasd asd</div>
+        <div>asdasd asd</div>
+        <div>asdasd asd</div>
+        <div>asdasd asd</div>
+        <div>asdasd asd</div>
+        <div>asdasd asd</div>
+        <div>asdasd asd</div>
+        <div>asdasd asd</div>
+    </div>
+        
+    <style>
+        .X-PopupTarget{position:absolute;width:140px;height:80px;border:1px solid}
+    </style>
+    <div class="X-PopupTarget">
+
+    </div>
+    <script>
+        function aa() {
+            console.log(intell.ctrl.getRectDetails(document.getElementsByClassName('target')[0]));
+        }
+        aa();
+
+        function showAt(location) {
+            intell.ctrl.showAtElement($('.X-PopupTarget')[0], $('.target')[0], [location], { moveToTarget: true });
+
+        }
+        
+
+    </script>
+</body>
+</html>

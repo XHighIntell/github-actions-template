@@ -1,0 +1,31 @@
+﻿.jit-testcase{position:relative}
+.jit-testcase>.panel1{display:flex;align-items:baseline;margin-bottom:8px}
+.jit-testcase>.panel1>.status{flex:0 0 auto;display:flex;align-self:center;align-items:center;justify-content:center;padding:0 2px;width:.8em;height:.8em;line-height:.8em;font-size:.6em;user-select:none}
+.jit-testcase>.panel1>.status.passed{color:#118b00}
+.jit-testcase>.panel1>.status.passed::before{content:"✓"}
+.jit-testcase>.panel1>.status.failed{color:#e40000}
+.jit-testcase>.panel1>.status.failed::before{content:"🞪"}
+.jit-testcase>.panel1>.status.running{position:relative}
+.jit-testcase>.panel1>.status.running::before{content:"";position:absolute;width:4px;height:4px;animation:x-waiting-spin 1.3s linear infinite;border:3px solid transparent;border-top:3px solid #0066ff;border-bottom:3px solid #0066ff;border-radius:50%}
+
+@keyframes x-waiting-spin {
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
+
+.jit-testcase>.panel1>.icon{flex:0 0 auto;width:.8em;height:.8em;margin-right:5px;background:center no-repeat}
+.jit-testcase>.panel1>.icon.class{background-image:url(../image/Class_16x.svg)}
+.jit-testcase>.panel1>.icon.method{background-image:url(../image/Method_16x.svg)}
+.jit-testcase>.panel1>.icon.property{background-image:url(../image/Property_16x.svg)}
+.jit-testcase>.panel1>.icon.event{background-image:url(../image/Event_16x.svg)}
+.jit-testcase>.panel1>.icon.namespace{background-image:url(../image/Namespace_16x.svg)}
+.jit-testcase>.panel1>.icon.test{background-image:url(../image/Test_16x.svg)}
+
+        
+.jit-testcase>.panel1>.title{margin-right:6px;color:#00688d}
+.jit-testcase>.panel1>.actions{display:flex;align-items:baseline;margin-left:10px}
+.jit-testcase>.panel1>.actions>.action{margin:0 2px;padding:0 5px;line-height:1em;border-radius:1px;font-size:.7em;cursor:pointer;text-decoration:underline}
+.jit-testcase>.panel1>.actions>.action:hover{color:#00aac2}
+.jit-testcase>.panel1>.actions .action-run{}
+        
+.jit-testcase>.children{padding-left:20px}

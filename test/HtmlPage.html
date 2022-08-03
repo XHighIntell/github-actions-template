@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+
+    <script src="/output/production/intell/intell.min.js"></script>    
+    <!--
+    <script src="/src/intell/intell.js"></script>
+    <script src="/src/intell/intell.ctrl.js"></script>    
+        -->
+    <style>
+        #box{position:absolute;left:100px;top:100px;right:100px;bottom:100px;background:red;opacity:0;transition:opacity 5s}
+        #box.IN{opacity:1}
+        #box.OUT{opacity:0}
+
+
+    </style>
+</head>
+<body>
+    <div id="box" style="display:none">
+
+    </div>
+    <button onclick="aa()">startShow</button>
+    <button onclick="bb()">startHide</button>
+    <script>
+        function aa() {
+            var box = document.getElementById('box');
+
+            intell.ctrl.stopHide(box);
+
+            intell.ctrl.show(box);
+            box.classList.add('IN');
+        }
+        function bb() {
+            
+            var box = document.getElementById('box');
+
+            box.classList.remove('IN');
+            intell.ctrl.startHide(box, 5000, "OUT").then(function() {
+                console.log('hided');
+            });
+        }
+    </script>
+</body>
+</html>
